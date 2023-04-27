@@ -4,35 +4,36 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.yourdomain.tld`,
+    title: 'Cassiopeia Petrolíferos',
   },
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+        option: {
+          trackingId: ``,
+        }
+    }
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
-        display: `standalone`,
+        icon: 'src/images/icon.png',
       },
     },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        // Defaults used for gatsbyImageData and StaticImage
-        defaults: {},
-        // Relates to "options.failOn" in https://sharp.pixelplumbing.com/api-constructor#parameters
-        failOn: `warning`,
-      },
-    },
-    `gatsby-plugin-sharp`, 
-    `gatsby-transformer-sharp`,
+    // Revisar como implementar esta parte!!!
+    // {
+    //   resolve: `gatsby-plugin-sharp`,
+    //   options: {
+    //     // Defaults used for gatsbyImageData and StaticImage
+    //     defaults: {},
+    //     // Relates to "options.failOn" in https://sharp.pixelplumbing.com/api-constructor#parameters
+    //     failOn: `warning`,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
@@ -50,5 +51,7 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-sitemap`,
   ],
 }
