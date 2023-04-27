@@ -8,13 +8,21 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-image`,
+    // `gatsby-plugin-image`,
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //     option: {
+    //       trackingId: ``,
+    //     }
+    // }
     {
-      resolve: `gatsby-plugin-google-analytics`,
-        option: {
-          trackingId: ``,
-        }
-    }
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
